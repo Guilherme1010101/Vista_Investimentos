@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Planejamento Financeiro Abrangente</title>
+    <!-- Inclui o Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define a fonte Inter para todo o corpo do documento */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Cor de fundo suave */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 lg:p-8">
+    <!-- Contêiner principal do formulário, centralizado e com sombra -->
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-6 sm:p-8 md:p-10 my-8">
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-4 text-center">Formulário de Planejamento Financeiro Abrangente</h1>
+        <p class="text-gray-600 mb-8 text-center leading-relaxed">
+            Olá Dra. Alana e Dr. Manoel,
+            <br>Este formulário tem como objetivo principal coletar informações detalhadas sobre a situação financeira, patrimonial e os objetivos de vocês. Com base nessas informações, poderemos desenvolver um planejamento financeiro totalmente personalizado e estratégico, alinhado às suas expectativas e ambições.
+            <br>Agradecemos imensamente a sua dedicação em preencher este questionário. Todas as informações aqui fornecidas serão tratadas com a mais alta confidencialidade e utilizadas exclusivamente para o seu planejamento financeiro.
+        </p>
+
+        <!-- Formulário principal - Configurado para enviar dados via Formspree -->
+        <!-- IMPORTANTE: Substitua "YOUR_FORMSPREE_ENDPOINT" pelo seu endpoint real do Formspree (ex: https://formspree.io/f/xyzwabcd) -->
+        <form action="https://formspree.io/f/https://formspree.io/f/xqabqpzv" method="POST" id="financialForm" enctype="multipart/form-data">
+            <!-- Mensagem de sucesso do envio -->
+            <div id="successMessage" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6" role="alert">
+                <strong class="font-bold">Sucesso!</strong>
+                <span class="block sm:inline">Seu formulário foi enviado. Em breve entraremos em contato.</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onclick="document.getElementById('successMessage').classList.add('hidden')">
+                    <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Fechar</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                </span>
+            </div>
+
+            <!-- Seção 1: Dados Pessoais e Perfil -->
+            <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 border-b pb-3 border-gray-200">1. Dados Pessoais e Perfil</h2>
+
+                <!-- Email do prospect (para _replyto no Formspree) -->
+                <div class="mb-6">
+                    <label for="prospect_email" class="block text-sm font-medium text-gray-700 mb-1">Seu melhor e-mail para contato:</label>
+                    <input type="email" id="prospect_email" name="_replyto" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="seu.email@exemplo.com" required>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Nome Completo (Dra. Alana) -->
+                    <div>
+                        <label for="alana_nome" class="block text-sm font-medium text-gray-700 mb-1">1.1. Nome Completo (Dra. Alana):</label>
+                        <input type="text" id="alana_nome" name="alana_nome" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <!-- Profissão (Dra. Alana) -->
+                    <div>
+                        <label for="alana_profissao" class="block text-sm font-medium text-gray-700 mb-1">1.2. Profissão (Dra. Alana):</label>
+                        <input type="text" id="alana_profissao" name="alana_profissao" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <!-- Data de Nascimento (Dra. Alana) -->
+                    <div>
+                        <label for="alana_nascimento" class="block text-sm font-medium text-gray-700 mb-1">1.3. Data de Nascimento (Dra. Alana):</label>
+                        <input type="date" id="alana_nascimento" name="alana_nascimento" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <!-- Nome Completo (Dr. Manoel) -->
+                    <div>
+                        <label for="manoel_nome" class="block text-sm font-medium text-gray-700 mb-1">1.4. Nome Completo (Dr. Manoel):</label>
+                        <input type="text" id="manoel_nome" name="manoel_nome" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <!-- Profissão (Dr. Manoel) -->
+                    <div>
+                        <label for="manoel_profissao" class="block text-sm font-medium text-gray-700 mb-1">1.5. Profissão (Dr. Manoel):</label>
+                        <input type="text" id="manoel_profissao" name="manoel_profissao" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <!-- Data de Nascimento (Dr. Manoel) -->
+                    <div>
+                        <label for="manoel_nascimento" class="block text-sm font-medium text-gray-700 mb-1">1.6. Data de Nascimento (Dr. Manoel):</label>
+                        <input type="date" id="manoel_nascimento" name="manoel_nascimento" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                </div>
+
+                <!-- Estado Civil -->
+                <div class="mb-6">
+                    <label for="estado_civil" class="block text-sm font-medium text-gray-700 mb-1">1.7. Estado Civil:</label>
+                    <select id="estado_civil" name="estado_civil" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                        <option value="">Selecione...</option>
+                        <option value="solteiro">Solteiro(a)</option>
+                        <option value="casado">Casado(a)</option>
+                        <option value="uniao_estavel">União Estável</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <!-- Possuem filhos atualmente? -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">1.8. Possuem filhos atualmente?</label>
+                    <div class="flex items-center space-x-4">
+                        <input type="radio" id="filhos_sim" name="possui_filhos" value="sim" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" onchange="toggleFilhos()">
+                        <label for="filhos_sim" class="text-sm font-medium text-gray-700">Sim</label>
+                        <input type="radio" id="filhos_nao" name="possui_filhos" value="nao" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" onchange="toggleFilhos()">
+                        <label for="filhos_nao" class="text-sm font-medium text-gray-700">Não</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta condicional para filhos -->
+                <div id="pergunta_filhos_detalhes" class="mb-6 hidden">
+                    <label for="quantidade_idade_filhos" class="block text-sm font-medium text-gray-700 mb-1">Quantos filhos e quais as idades?</label>
+                    <input type="text" id="quantidade_idade_filhos" name="quantidade_idade_filhos" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- Pretendem ter filhos no futuro? -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">1.9. Pretendem ter filhos no futuro?</label>
+                    <div class="flex items-center space-x-4">
+                        <input type="radio" id="futuro_filhos_sim" name="pretende_filhos" value="sim" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="futuro_filhos_sim" class="text-sm font-medium text-gray-700">Sim</label>
+                        <input type="radio" id="futuro_filhos_nao" name="pretende_filhos" value="nao" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="futuro_filhos_nao" class="text-sm font-medium text-gray-700">Não</label>
+                        <input type="radio" id="futuro_filhos_indefinido" name="pretende_filhos" value="indefinido" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="futuro_filhos_indefinido" class="text-sm font-medium text-gray-700">Indefinido</label>
+                    </div>
+                </div>
+
+                <!-- Conhecimento sobre o mercado financeiro -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">1.10. Como vocês descrevem o seu conhecimento sobre o mercado financeiro e investimentos?</label>
+                    <div class="flex items-center space-x-4">
+                        <input type="radio" id="conhecimento_1" name="conhecimento_mercado" value="1" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="conhecimento_1" class="text-sm font-medium text-gray-700">1 - Sem conhecimento</label>
+                        <input type="radio" id="conhecimento_2" name="conhecimento_mercado" value="2" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="conhecimento_2" class="text-sm font-medium text-gray-700">2</label>
+                        <input type="radio" id="conhecimento_3" name="conhecimento_mercado" value="3" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" checked> <!-- Pré-selecionado como "moderado" -->
+                        <label for="conhecimento_3" class="text-sm font-medium text-gray-700">3 - Moderado</label>
+                        <input type="radio" id="conhecimento_4" name="conhecimento_mercado" value="4" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="conhecimento_4" class="text-sm font-medium text-gray-700">4</label>
+                        <input type="radio" id="conhecimento_5" name="conhecimento_mercado" value="5" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="conhecimento_5" class="text-sm font-medium text-gray-700">5 - Muito conhecimento</label>
+                    </div>
+                </div>
+
+                <!-- Tolerância a risco -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">1.11. Qual a sua tolerância a risco nos investimentos?</label>
+                    <div class="flex items-center space-x-4 flex-wrap gap-y-2">
+                        <input type="radio" id="risco_conservador" name="tolerancia_risco" value="conservador" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="risco_conservador" class="text-sm font-medium text-gray-700">Conservador</label>
+                        <input type="radio" id="risco_moderado" name="tolerancia_risco" value="moderado" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" checked> <!-- Pré-selecionado como "moderado" -->
+                        <label for="risco_moderado" class="text-sm font-medium text-gray-700">Moderado</label>
+                        <input type="radio" id="risco_arrojado" name="tolerancia_risco" value="arrojado" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="risco_arrojado" class="text-sm font-medium text-gray-700">Arrojado</label>
+                        <input type="radio" id="risco_agressivo" name="tolerancia_risco" value="agressivo" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="risco_agressivo" class="text-sm font-medium text-gray-700">Agressivo</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 2: Situação Financeira Atual - Pessoal -->
+            <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 border-b pb-3 border-gray-200">2. Situação Financeira Atual - Pessoal</h2>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">2.1. Receitas Mensais</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Receita Líquida Dra. Alana -->
+                    <div>
+                        <label for="receita_alana" class="block text-sm font-medium text-gray-700 mb-1">2.1.1. Qual a receita líquida mensal (salário/pró-labore) da Dra. Alana? (R$)</label>
+                        <input type="number" id="receita_alana" name="receita_alana" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0" required>
+                    </div>
+                    <!-- Receita Líquida Dr. Manoel -->
+                    <div>
+                        <label for="receita_manoel" class="block text-sm font-medium text-gray-700 mb-1">2.1.2. Qual a receita líquida mensal (salário/pró-labore) do Dr. Manoel? (R$)</label>
+                        <input type="number" id="manoel_receita" name="manoel_receita" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0" required>
+                    </div>
+                </div>
+                <!-- Outras fontes de renda pessoal -->
+                <div class="mb-6">
+                    <label for="outras_rendas_pessoais" class="block text-sm font-medium text-gray-700 mb-1">2.1.3. Possuem outras fontes de renda pessoal? Se sim, por favor, detalhe:</label>
+                    <textarea id="outras_rendas_pessoais" name="outras_rendas_pessoais" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <!-- Total de receitas mensais combinadas -->
+                <div class="mb-6">
+                    <label for="total_receitas_pessoais" class="block text-sm font-medium text-gray-700 mb-1">2.1.4. Qual o total de receitas mensais combinadas (pessoais)? (Este campo pode ser calculado, mas é bom para reflexão.) (R$)</label>
+                    <input type="number" id="total_receitas_pessoais" name="total_receitas_pessoais" class="w-full p-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed" step="0.01" min="0" readonly>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">2.2. Despesas Mensais</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Despesas fixas mensais -->
+                    <div>
+                        <label for="despesas_fixas" class="block text-sm font-medium text-gray-700 mb-1">2.2.1. Qual o total das despesas fixas mensais do casal (moradia, condomínio, contas de consumo, mensalidades, etc.)? (R$)</label>
+                        <input type="number" id="despesas_fixas" name="despesas_fixas" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0" required>
+                    </div>
+                    <!-- Despesas variáveis mensais -->
+                    <div>
+                        <label for="despesas_variaveis" class="block text-sm font-medium text-gray-700 mb-1">2.2.2. Qual o total das despesas variáveis mensais do casal (alimentação, lazer, transporte, saúde, etc.)? (R$)</label>
+                        <input type="number" id="despesas_variaveis" name="despesas_variaveis" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0" required>
+                    </div>
+                </div>
+                <!-- Gastos significativos não mensais -->
+                <div class="mb-6">
+                    <label for="gastos_nao_mensais" class="block text-sm font-medium text-gray-700 mb-1">2.2.3. Vocês têm algum gasto significativo que não seja mensal, mas recorrente (ex: seguros anuais, IPTU/IPVA em parcelas, etc.)? Se sim, detalhe e informe o valor aproximado mensalizado:</label>
+                    <textarea id="gastos_nao_mensais" name="gastos_nao_mensais" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <!-- Aporte mensal para investimentos -->
+                <div class="mb-6">
+                    <label for="aporte_mensal" class="block text-sm font-medium text-gray-700 mb-1">2.2.4. Qual o aporte mensal que vocês destinam ou pretendem destinar para investimentos? (R$)</label>
+                    <input type="number" id="aporte_mensal" name="aporte_mensal" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" value="20000.00" step="0.01" min="0" required>
+                    <p class="text-xs text-gray-500 mt-1">Observação: Consideramos a interrupção dos aportes em setembro e outubro devido à viagem ao Japão.</p>
+                </div>
+            </section>
+
+            <!-- Seção 3: Situação Financeira Atual - Empresas -->
+            <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 border-b pb-3 border-gray-200">3. Situação Financeira Atual - Empresas</h2>
+
+                <!-- Clínica -->
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">3.1. Clínica</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="clinica_faturamento" class="block text-sm font-medium text-gray-700 mb-1">3.1.1. Qual o faturamento mensal médio da clínica nos últimos 12 meses? (R$)</label>
+                        <input type="number" id="clinica_faturamento" name="clinica_faturamento" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" value="400000.00" step="0.01" min="0" required>
+                    </div>
+                    <div>
+                        <label for="clinica_custo" class="block text-sm font-medium text-gray-700 mb-1">3.1.2. Qual o custo mensal médio da clínica (excluindo os gastos fixos abaixo)? (R$)</label>
+                        <input type="number" id="clinica_custo" name="clinica_custo" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" value="40000.00" step="0.01" min="0" required>
+                    </div>
+                    <div>
+                        <label for="clinica_gastos_fixos" class="block text-sm font-medium text-gray-700 mb-1">3.1.3. Qual o total de gastos fixos mensais da clínica (folha de pagamento, aluguel/condomínio, etc.)? (R$)</label>
+                        <input type="number" id="clinica_gastos_fixos" name="clinica_gastos_fixos" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" value="60000.00" step="0.01" min="0" required>
+                    </div>
+                    <div>
+                        <label for="clinica_lucro" class="block text-sm font-medium text-gray-700 mb-1">3.1.4. Qual a receita líquida/lucro médio mensal da clínica (após todos os custos e gastos)? (R$)</label>
+                        <input type="number" id="clinica_lucro" name="clinica_lucro" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" value="100000.00" step="0.01" min="0" required>
+                        <p class="text-xs text-gray-500 mt-1">Observação: Por favor, confirme se este valor representa o lucro líquido disponível da clínica após a dedução de todos os custos e gastos fixos.</p>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="clinica_crescimento_detalhes" class="block text-sm font-medium text-gray-700 mb-1">3.1.5. A clínica cresceu 180%. Poderiam detalhar esse crescimento (período, o que o impulsionou)?</label>
+                    <textarea id="clinica_crescimento_detalhes" name="clinica_crescimento_detalhes" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+
+                <!-- Empresa de Educação -->
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">3.2. Empresa de Educação</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="educacao_faturamento" class="block text-sm font-medium text-gray-700 mb-1">3.2.1. Qual o faturamento mensal médio da empresa de educação? (R$)</label>
+                        <input type="number" id="educacao_faturamento" name="educacao_faturamento" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                    </div>
+                    <div>
+                        <label for="educacao_custo" class="block text-sm font-medium text-gray-700 mb-1">3.2.2. Qual o custo e/ou gastos fixos mensais da empresa de educação? (R$)</label>
+                        <input type="number" id="educacao_custo" name="educacao_custo" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                    </div>
+                    <div>
+                        <label for="educacao_lucro" class="block text-sm font-medium text-gray-700 mb-1">3.2.3. Qual o lucro líquido mensal médio da empresa de educação? (R$)</label>
+                        <input type="number" id="educacao_lucro" name="educacao_lucro" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                    </div>
+                    <div>
+                        <label for="educacao_participacao" class="block text-sm font-medium text-gray-700 mb-1">3.2.4. Qual a participação de vocês na sociedade desta empresa (percentual)? (%)</label>
+                        <input type="number" id="educacao_participacao" name="educacao_participacao" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0" max="100">
+                    </div>
+                </div>
+
+                <!-- Farmácia de Manipulação -->
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">3.3. Farmácia de Manipulação</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="farmacia_faturamento" class="block text-sm font-medium text-gray-700 mb-1">3.3.1. Qual o faturamento mensal médio da farmácia de manipulação? (R$)</label>
+                        <input type="number" id="farmacia_faturamento" name="farmacia_faturamento" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                    </div>
+                    <div>
+                        <label for="farmacia_custo" class="block text-sm font-medium text-gray-700 mb-1">3.3.2. Qual o custo e/ou gastos fixos mensais da farmácia de manipulação? (R$)</label>
+                        <input type="number" id="farmacia_custo" name="farmacia_custo" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                    </div>
+                    <div>
+                        <label for="farmacia_lucro" class="block text-sm font-medium text-gray-700 mb-1">3.3.3. Qual o lucro líquido mensal médio da farmácia de manipulação? (R$)</label>
+                        <input type="number" id="farmacia_lucro" name="farmacia_lucro" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                    </div>
+                    <div>
+                        <label for="farmacia_participacao" class="block text-sm font-medium text-gray-700 mb-1">3.3.4. Qual a participação de vocês na sociedade desta empresa (percentual)? (%)</label>
+                        <input type="number" id="farmacia_participacao" name="farmacia_participacao" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0" max="100">
+                    </div>
+                </div>
+
+                <!-- E-commerce de Produtos Hospitalares -->
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">3.4. E-commerce de Produtos Hospitalares</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="ecommerce_faturamento" class="block text-sm font-medium text-gray-700 mb-1">3.4.1. Qual o faturamento mensal médio do e-commerce de produtos hospitalares? (R$)</label>
+                        <input type="number" id="ecommerce_faturamento" name="ecommerce_faturamento" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                    </div>
+                    <div>
+                        <label for="ecommerce_custo" class="block text-sm font-medium text-gray-700 mb-1">3.4.2. Qual o custo e/ou gastos fixos mensais do e-commerce de produtos hospitalares? (R$)</label>
+                        <input type="number" id="ecommerce_custo" name="ecommerce_custo" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                    </div>
+                    <div>
+                        <label for="ecommerce_lucro" class="block text-sm font-medium text-gray-700 mb-1">3.4.3. Qual o lucro líquido mensal médio do e-commerce de produtos hospitalares? (R$)</label>
+                        <input type="number" id="ecommerce_lucro" name="ecommerce_lucro" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                    </div>
+                    <div>
+                        <label for="ecommerce_participacao" class="block text-sm font-medium text-gray-700 mb-1">3.4.4. Qual a participação de vocês na sociedade desta empresa (percentual)? (%)</label>
+                        <input type="number" id="ecommerce_participacao" name="ecommerce_participacao" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0" max="100">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="ecommerce_anvisa" class="block text-sm font-medium text-gray-700 mb-1">3.4.5. Por favor, detalhe o status da regularização com a ANVISA para venda de princípios ativos controlados.</label>
+                    <textarea id="ecommerce_anvisa" name="ecommerce_anvisa" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+            </section>
+
+            <!-- Seção 4: Patrimônio e Alocação Atual -->
+            <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 border-b pb-3 border-gray-200">4. Patrimônio e Alocação Atual</h2>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">4.1. Investimentos (Pessoais e Empresariais)</h3>
+                <div class="mb-6">
+                    <label for="investimentos_detalhes" class="block text-sm font-medium text-gray-700 mb-1">4.1.1. Por favor, liste todos os investimentos que vocês possuem, incluindo tipo (CDB, LCI, Ações, Fundos, Previdência, etc.), instituição financeira e valor aproximado investido em cada um. (R$)</label>
+                    <textarea id="investimentos_detalhes" name="investimentos_detalhes" rows="5" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Ex: CDB Banco X - R$ 150.000,00; Fundo de Ações Y - R$ 100.000,00; Previdência Z - R$ 50.000,00." required></textarea>
+                    <p class="text-xs text-gray-500 mt-1">Observação: A soma dos investimentos pessoais é em torno de R$ 250.000,00 para cada um.</p>
+                </div>
+                <div class="mb-6">
+                    <label for="investimentos_empresariais" class="block text-sm font-medium text-gray-700 mb-1">4.1.2. Existem investimentos vinculados às empresas? Se sim, por favor, detalhe:</label>
+                    <textarea id="investimentos_empresariais" name="investimentos_empresariais" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+
+                <!-- Campo: Upload de Prints das Posições Atuais -->
+                <div class="mb-6">
+                    <label for="prints_posicoes" class="block text-sm font-medium text-gray-700 mb-1">4.1.3. Façam upload de prints ou documentos das posições atuais de seus investimentos (opcional):</label>
+                    <input type="file" id="prints_posicoes" name="prints_posicoes[]" multiple accept="image/*, .pdf" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    <p class="text-xs text-gray-500 mt-1">É possível selecionar múltiplas imagens (JPG, PNG) ou PDFs. (Limitação de 1MB por arquivo no plano gratuito do Formspree)</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">4.2. Imóveis</h3>
+                <div class="mb-6">
+                    <label for="imoveis_detalhes" class="block text-sm font-medium text-gray-700 mb-1">4.2.1. Por favor, liste todos os imóveis que vocês possuem (residencial, comercial, terrenos, etc.), incluindo o tipo, localização, valor de mercado estimado e se está quitado ou financiado.</label>
+                    <textarea id="imoveis_detalhes" name="imoveis_detalhes" rows="5" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Ex: Apartamento, Porto Alegre, R$ 1.500.000,00, Financiado; Sala Comercial, Centro, R$ 500.000,00, Quitado."></textarea>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">4.3. Veículos</h3>
+                <div class="mb-6">
+                    <label for="veiculos_detalhes" class="block text-sm font-medium text-gray-700 mb-1">4.3.1. Por favor, liste os veículos que vocês possuem, incluindo marca, modelo, ano e valor de mercado estimado.</label>
+                    <textarea id="veiculos_detalhes" name="veiculos_detalhes" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Ex: Carro A, Modelo X, 2022, R$ 120.000,00; Carro B, Modelo Y, 2020, R$ 80.000,00."></textarea>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">4.4. Outros Bens e Ativos</h3>
+                <div class="mb-6">
+                    <label for="outros_bens_detalhes" class="block text-sm font-medium text-gray-700 mb-1">4.4.1. Possuem outros bens de valor significativo (ex: joias, obras de arte, coleções, participações em outras empresas, etc.)? Se sim, por favor, detalhe e informe o valor estimado.</label>
+                    <textarea id="outros_bens_detalhes" name="outros_bens_detalhes" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+            </section>
+
+            <!-- Seção 5: Passivos e Endividamento -->
+            <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 border-b pb-3 border-gray-200">5. Passivos e Endividamento</h2>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">5.1. Financiamentos</h3>
+                <div class="mb-6">
+                    <label for="financiamentos_detalhes" class="block text-sm font-medium text-gray-700 mb-1">5.1.1. Por favor, detalhe os 2 financiamentos que vocês possuem (tipo de financiamento, valor original, saldo devedor atual, valor da parcela, taxa de juros e prazo restante).</label>
+                    <textarea id="financiamentos_detalhes" name="financiamentos_detalhes" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Ex: Financiamento Imobiliário, R$ 1.000.000,00, Saldo R$ 800.000,00, Parcela R$ 7.000,00, Taxa 8% a.a., 200 parcelas restantes."></textarea>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">5.2. Consórcios</h3>
+                <div class="mb-6">
+                    <label for="consorcios_detalhes" class="block text-sm font-medium text-gray-700 mb-1">5.2.1. Por favor, detalhe os 4 consórcios que vocês possuem (valor da carta de crédito, bem a que se destina, valor da parcela, quantas parcelas pagas/restantes e status de contemplação).</label>
+                    <textarea id="consorcios_detalhes" name="consorcios_detalhes" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Ex: Consórcio Imóvel, Carta R$ 500.000,00, Parcela R$ 2.500,00, 30/180 pagas, Não contemplado."></textarea>
+                    <p class="text-xs text-gray-500 mt-1">Observação: Mencionaram que falta apenas 1 ser contemplado.</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">5.3. Outras Dívidas</h3>
+                <div class="mb-6">
+                    <label for="outras_dividas_detalhes" class="block text-sm font-medium text-gray-700 mb-1">5.3.1. Possuem outras dívidas (ex: empréstimos pessoais, cartões de crédito, dívidas empresariais, etc.)? Se sim, por favor, detalhe (valor, credor, parcela, prazo).</label>
+                    <textarea id="outras_dividas_detalhes" name="outras_dividas_detalhes" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+            </section>
+
+            <!-- Seção 6: Objetivos Financeiros Futuros -->
+            <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 border-b pb-3 border-gray-200">6. Objetivos Financeiros Futuros</h2>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">6.1. Compra do Prédio (R$ 6 milhões)</h3>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">6.1.1. Qual a urgência/prazo desejado para a aquisição do prédio de R$ 6 milhões?</label>
+                    <div class="flex items-center space-x-4 flex-wrap gap-y-2">
+                        <input type="radio" id="predio_curto_prazo" name="predio_prazo" value="curto" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="predio_curto_prazo" class="text-sm font-medium text-gray-700">Curto Prazo (<1 ano)</label>
+                        <input type="radio" id="predio_medio_prazo" name="predio_prazo" value="medio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="predio_medio_prazo" class="text-sm font-medium text-gray-700">Médio Prazo (1-3 anos)</label>
+                        <input type="radio" id="predio_longo_prazo" name="predio_prazo" value="longo" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="predio_longo_prazo" class="text-sm font-medium text-gray-700">Longo Prazo (>3 anos)</label>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="predio_socios" class="block text-sm font-medium text-gray-700 mb-1">6.1.2. Além do Dr. Manoel, quantos sócios estão envolvidos nesta aquisição?</label>
+                    <input type="number" id="predio_socios" name="predio_socios" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" min="0">
+                </div>
+                <div class="mb-6">
+                    <label for="predio_entrada_reservas" class="block text-sm font-medium text-gray-700 mb-1">6.1.3. Vocês já têm um valor de entrada ou recursos reservados para essa aquisição? Se sim, qual o valor e onde está alocado?</label>
+                    <textarea id="predio_entrada_reservas" name="predio_entrada_reservas" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">6.1.4. Qual a intenção principal do prédio (uso próprio para as clínicas/empresas, investimento para locação, ambos)?</label>
+                    <div class="flex items-center space-x-4 flex-wrap gap-y-2">
+                        <input type="radio" id="predio_uso_proprio" name="predio_intencao" value="uso_proprio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="predio_uso_proprio" class="text-sm font-medium text-gray-700">Uso Próprio</label>
+                        <input type="radio" id="predio_investimento" name="predio_intencao" value="investimento" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="predio_investimento" class="text-sm font-medium text-gray-700">Investimento/Locação</label>
+                        <input type="radio" id="predio_ambos" name="predio_intencao" value="ambos" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="predio_ambos" class="text-sm font-medium text-gray-700">Ambos</label>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="predio_consorcio_expectativa" class="block text-sm font-medium text-gray-700 mb-1">6.1.5. Qual a expectativa em relação à aquisição via consórcio (velocidade, valor da contemplação, etc.)?</label>
+                    <textarea id="predio_consorcio_expectativa" name="predio_consorcio_expectativa" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">6.2. Planejamento Familiar</h3>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">6.2.1. Se planejam ter filhos, qual o horizonte de tempo?</label>
+                    <div class="flex items-center space-x-4 flex-wrap gap-y-2">
+                        <input type="radio" id="filhos_1_2_anos" name="filhos_horizonte" value="1-2" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="filhos_1_2_anos" class="text-sm font-medium text-gray-700">Nos próximos 1-2 anos</label>
+                        <input type="radio" id="filhos_3_5_anos" name="filhos_horizonte" value="3-5" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="filhos_3_5_anos" class="text-sm font-medium text-gray-700">Nos próximos 3-5 anos</label>
+                        <input type="radio" id="filhos_mais_5_anos" name="filhos_horizonte" value="mais_5" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="filhos_mais_5_anos" class="text-sm font-medium text-gray-700">Mais de 5 anos</label>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="objetivos_familia" class="block text-sm font-medium text-gray-700 mb-1">6.2.2. Quais são os principais objetivos financeiros relacionados à família (ex: educação dos filhos, casa maior, etc.)?</label>
+                    <textarea id="objetivos_familia" name="objetivos_familia" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">6.3. Aposentadoria</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="aposentadoria_idade_alana" class="block text-sm font-medium text-gray-700 mb-1">6.3.1. Qual a idade desejada para a aposentadoria da Dra. Alana?</label>
+                        <input type="number" id="aposentadoria_idade_alana" name="aposentadoria_idade_alana" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" min="18" max="100">
+                    </div>
+                    <div>
+                        <label for="aposentadoria_idade_manoel" class="block text-sm font-medium text-gray-700 mb-1">6.3.1. Qual a idade desejada para a aposentadoria do Dr. Manoel?</label>
+                        <input type="number" id="aposentadoria_idade_manoel" name="aposentadoria_idade_manoel" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" min="18" max="100">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="aposentadoria_padrao_vida" class="block text-sm font-medium text-gray-700 mb-1">6.3.2. Qual o padrão de vida que desejam ter na aposentadoria (estimativa de despesas mensais)? (R$)</label>
+                    <input type="number" id="aposentadoria_padrao_vida" name="aposentadoria_padrao_vida" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" step="0.01" min="0">
+                </div>
+                <div class="mb-6">
+                    <label for="previdencia_privada" class="block text-sm font-medium text-gray-700 mb-1">6.3.3. Já possuem algum plano de previdência privada? Se sim, qual o valor acumulado e os aportes atuais?</label>
+                    <textarea id="previdencia_privada" name="previdencia_privada" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 mt-8">6.4. Outros Objetivos</h3>
+                <div class="mb-6">
+                    <label for="outros_objetivos" class="block text-sm font-medium text-gray-700 mb-1">6.4.1. Existem outros objetivos financeiros importantes para vocês (ex: viagens futuras, aquisição de outros bens, investimentos em outras empresas, etc.)? Por favor, detalhe.</label>
+                    <textarea id="outros_objetivos" name="outros_objetivos" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+            </section>
+
+            <!-- Seção 7: Planejamento e Expectativas -->
+            <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 border-b pb-3 border-gray-200">7. Planejamento e Expectativas</h2>
+
+                <div class="mb-6">
+                    <label for="expectativa_private_banker" class="block text-sm font-medium text-gray-700 mb-1">7.1. Qual a expectativa de vocês em relação ao nosso trabalho como Private Banker?</label>
+                    <textarea id="expectativa_private_banker" name="expectativa_private_banker" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <div class="mb-6">
+                    <label for="principais_preocupacoes" class="block text-sm font-medium text-gray-700 mb-1">7.2. Quais são as principais preocupações financeiras de vocês no momento?</label>
+                    <textarea id="principais_preocupacoes" name="principais_preocupacoes" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">7.3. Vocês estão abertos a revisitar a alocação atual de seus investimentos para otimização?</label>
+                    <div class="flex items-center space-x-4">
+                        <input type="radio" id="otimizacao_sim" name="otimizacao_alocacao" value="sim" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="otimizacao_sim" class="text-sm font-medium text-gray-700">Sim</label>
+                        <input type="radio" id="otimizacao_nao" name="otimizacao_alocacao" value="nao" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="otimizacao_nao" class="text-sm font-medium text-gray-700">Não</label>
+                        <input type="radio" id="otimizacao_talvez" name="otimizacao_alocacao" value="talvez" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                        <label for="otimizacao_talvez" class="text-sm font-medium text-gray-700">Talvez</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 8: Benefícios Fiscais e Observações -->
+            <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 border-b pb-3 border-gray-200">8. Benefícios Fiscais e Observações</h2>
+
+                <div class="mb-6">
+                    <label for="duvidas_beneficios_fiscais" class="block text-sm font-medium text-gray-700 mb-1">8.1. Quais são as principais dúvidas de vocês em relação a benefícios fiscais para pessoas físicas e para as empresas?</label>
+                    <textarea id="duvidas_beneficios_fiscais" name="duvidas_beneficios_fiscais" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <div class="mb-6">
+                    <label for="outras_informacoes" class="block text-sm font-medium text-gray-700 mb-1">8.2. Há alguma outra informação que vocês consideram relevante e que não foi abordada neste formulário?</label>
+                    <textarea id="outras_informacoes" name="outras_informacoes" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+            </section>
+
+            <!-- Botão de Enviar -->
+            <div class="text-center">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:scale-105">
+                    Enviar Formulário
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Função para mostrar/esconder a pergunta condicional sobre filhos
+        function toggleFilhos() {
+            const filhosSim = document.getElementById('filhos_sim');
+            const perguntaFilhosDetalhes = document.getElementById('pergunta_filhos_detalhes');
+            if (filhosSim.checked) {
+                perguntaFilhosDetalhes.classList.remove('hidden');
+            } else {
+                perguntaFilhosDetalhes.classList.add('hidden');
+            }
+        }
+
+        // Adiciona um listener para atualizar o total de receitas pessoais
+        document.addEventListener('DOMContentLoaded', () => {
+            const receitaAlana = document.getElementById('receita_alana');
+            const receitaManoel = document.getElementById('manoel_receita');
+            const totalReceitasPessoais = document.getElementById('total_receitas_pessoais');
+
+            // Função para calcular o total
+            const calcularTotalReceitas = () => {
+                const valAlana = parseFloat(receitaAlana.value) || 0;
+                const valManoel = parseFloat(receitaManoel.value) || 0;
+                totalReceitasPessoais.value = (valAlana + valManoel).toFixed(2);
+            };
+
+            // Adiciona event listeners para mudanças nos campos de receita
+            receitaAlana.addEventListener('input', calcularTotalReceitas);
+            receitaManoel.addEventListener('input', calcularTotalReceitas);
+
+
+            // Calcula o total inicial caso os campos já tenham valores
+            calcularTotalReceitas();
+
+            // Chama a função toggleFilhos no carregamento para garantir o estado correto
+            toggleFilhos();
+        });
+
+        // Função para lidar com o envio do formulário e exibir mensagem de sucesso
+        document.getElementById('financialForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const responseMessage = document.getElementById('successMessage');
+
+            try {
+                // Envia os dados para o Formspree
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    responseMessage.classList.remove('hidden'); // Exibe a mensagem de sucesso
+                    form.reset(); // Limpa o formulário
+                    // Recalcula as receitas após limpar o formulário
+                    document.getElementById('total_receitas_pessoais').value = (0).toFixed(2);
+                    // Oculta a pergunta condicional de filhos, se estiver visível
+                    document.getElementById('pergunta_filhos_detalhes').classList.add('hidden');
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        alert('Erro ao enviar o formulário: ' + data.errors.map(error => error.message).join(', '));
+                    } else {
+                        alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+                    }
+                    responseMessage.classList.add('hidden'); // Oculta a mensagem de sucesso se houver erro
+                }
+            } catch (error) {
+                console.error('Erro na requisição:', error);
+                alert('Ocorreu um erro na conexão. Por favor, verifique sua internet e tente novamente.');
+                responseMessage.classList.add('hidden'); // Oculta a mensagem de sucesso se houver erro
+            }
+        });
+    </script>
+</body>
+</html>
